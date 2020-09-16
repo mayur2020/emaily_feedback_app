@@ -5,5 +5,5 @@ module.exports =
     googleClientSecret: process.env.GOOGLE_CLIENT_SECRET,
     mongoURI: process.env.MONGO_URI,
     cookieKey: process.env.COOKIE_KEY,
-    googleRedirectedURI: 'https://desolate.herokuapp.com/'
+    googleRedirectedURI: 'https://chamber.herokuapp.com/'
 };
