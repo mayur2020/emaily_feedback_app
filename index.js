@@ -1,4 +1,3 @@
-
 const express = require('express');
 const mongoose = require('mongoose');
 const keys = require('./config/keys');
@@ -7,8 +6,6 @@ const passport = require('passport');
 
 require('./models/user');
 require('./services/passport');
-
-mongoose.connect();
 
 const passportConfig = require('./services/passport');
 const authroutes = require('./routes/authroutes');
