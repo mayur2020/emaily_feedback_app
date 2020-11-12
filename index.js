@@ -8,6 +8,15 @@ const bodyParser = require('body-parser');
 require('./models/user');
 require('./services/passport');
 
+if(process.env.NODE_ENV === 'production')
+{
+    app.use(express.static('client/build'));
+    const path = require('path');
+    app.get('*',(req,res) => {
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'static'))
+    });
+}
+
 const passportConfig = require('./services/passport');
 const authroutes = require('./routes/authroutes');
 
