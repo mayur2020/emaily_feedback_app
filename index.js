@@ -6,6 +6,7 @@ const passport = require('passport');
 const bodyParser = require('body-parser');
 
 require('./models/user');
+require('./models/Survey');
 require('./services/passport');
 
 if(process.env.NODE_ENV === 'production')
@@ -13,7 +14,7 @@ if(process.env.NODE_ENV === 'production')
     app.use(express.static('client/build'));
     const path = require('path');
     app.get('*',(req,res) => {
-        res.sendFile(path.resolve(__dirname, 'client', 'build', 'static'))
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
     });
 }
 
@@ -37,6 +38,7 @@ app.use(passport.session());
 
 require('./routes/authroutes')(app);
 require('./routes/billingRoutes')(app,passport);
+require('./routes/surveyRoutes')
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
