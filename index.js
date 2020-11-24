@@ -9,11 +9,6 @@ require('./models/user');
 require('./models/Survey');
 require('./services/passport');
 
-
-
-const passportConfig = require('./services/passport');
-const authroutes = require('./routes/authroutes');
-
 mongoose.connect(keys.mongoURI, {useNewUrlParser: true, useUnifiedTopology: true});
 
 

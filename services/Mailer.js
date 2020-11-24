@@ -1,9 +1,10 @@
-const senddrid = require('sendgrid');
-const  helper = senddrid.mail;
+const sendgrid = require('sendgrid');
+const helper = sendgrid.mail;
 const keys = require('../config/keys')
 
 
-class Mailer extends helper.Mail{
+class Mailer extends helper.Mail
+{
     constructor({ subject, recipients }, content)
     {
         super();
@@ -39,7 +40,7 @@ class Mailer extends helper.Mail{
     {
         const personlize = new helper.Personalization();
         this.recipients.forEach(recipient => {
-            personlize.addTo(this.recipient);
+            personlize.addTo(recipient);
         });
 
         this.addPersonalization(personlize);
