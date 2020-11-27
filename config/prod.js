@@ -9,4 +9,5 @@ module.exports =
     stripeSecretKey: process.env.STRIPE_SECRET_KEY,
     googleRedirectedURI: 'https://chamber.herokuapp.com',
     sendGridKey: process.env.SEND_GRID_KEY,
+    redirectDomain: process.env.REDIRECT_DOMAIN,
 };
